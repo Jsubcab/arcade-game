@@ -1,3 +1,10 @@
+//background
+
+
+var c = document.querySelector("#c");
+var ctx = c.getContext("2d");
+
+
 // Enemies our player must avoid
 var Enemy = function() {
     // Variables applied to each of our instances go here,
@@ -26,8 +33,8 @@ Enemy.prototype.render = function() {
 // a handleInput() method.
 
 class player {
-    constructor() {
-
+    constructor(image= 'images/char-boy.png') {
+        this.image = image;
     }
 
     update() {
@@ -38,6 +45,10 @@ class player {
 
     }
 
+    handleInput() {
+
+    }
+
 
 }
 
@@ -45,6 +56,12 @@ class player {
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
+
+const enemy = new Enemy();
+
+var image = new Image();
+ctx.drawImage(image, 0, 0, c.width, c.height);
+image.src = enemy.sprite;
 
 
 
