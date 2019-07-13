@@ -56,11 +56,13 @@ class Player extends Creature{
 
     for (let enemies of allEnemies) {
         if (
-            enemies.y === this.y 
+            this.y <= enemies.y + 40
             && 
-            this.x >= enemies.x - 100
+            this.y >= enemies.y - 40
+            && 
+            this.x >= enemies.x - 95
             &&
-            this.x <= enemies.x + 100
+            this.x <= enemies.x + 95
         ) {
             this.restart();
         }
@@ -101,9 +103,9 @@ class Player extends Creature{
 
 const numEnemies = 4;
 const allEnemies = [];
-
-for (let i = 0; i< numEnemies; i++)
-    allEnemies.push(new Enemy(-100, Math.floor(Math.random() * 230) + 20 , 3));
+for (let i = 0; i< numEnemies; i++){
+    allEnemies.push(new Enemy(-100, Math.random() * 250, 3));
+}
 
 const player = new Player(200,400,1);
 
