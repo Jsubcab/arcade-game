@@ -1,49 +1,71 @@
+class Creature {
+    constructor(x,y,char) {
+        this.x=x;
+        this.y=y;
 
-
-// Enemies our player must avoid
-var Enemy = function() {
-    // Variables applied to each of our instances go here,
-    // we've provided one for you to get started
-    this.x = -100;
-    this.y= 0;
-    this.speed = 0;
-    // The image/sprite for our enemies, this uses
-    // a helper we've provided to easily load images
-    this.sprite = 'images/enemy-bug.png';
-};
-
-// Update the enemy's position, required method for game
-// Parameter: dt, a time delta between ticks
-Enemy.prototype.update = function(dt) {
-    // You should multiply any movement by the dt parameter
-    // which will ensure the game runs at the same speed for
-    // all computers.
-    this.x += this.speed;
-    if (this.x > 500) {
-        this.x = -100;
-    }
-};
-
-// Draw the enemy on the screen, required method for game
-Enemy.prototype.render = function() {
-    ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
-};
-
-//Player class
-
-class Player {
-    constructor() {
+        switch(char) {
+        case 1:
         this.sprite = 'images/char-boy.png';
-        this.x = 200;
-        this.y = 400;
-    }
-
-    update() {
-
+        break;
+        
+        case 2:
+        this.sprite = 'images/char-cat-girl.png';
+         break;
+        
+        case 3:
+        this.sprite = 'images/enemy-bug.png';
+        break;
+            } 
     }
 
     render() {
         ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+    }
+}
+
+class Enemy extends Creature {
+    constructor(x,y,sprite) {
+        super(x,y,sprite);
+        this.speed = Math.floor(Math.random() * 100) + 100;
+    }
+
+    update(dt) {
+        this.x += this.speed * dt;
+        if (this.x > 500) {
+            this.x = -100;
+        }
+    }
+}
+
+//Player class
+
+class Player extends Creature{
+    constructor(x,y,char) {
+        super(x,y,char);
+    }
+
+    restart() {
+        this.x =200;
+        this.y =400;
+    }
+
+    update() {
+        if (this.y === -100) {
+            this.restart();
+        }
+
+    for (let enemies of allEnemies) {
+        if (
+            enemies.y === this.y 
+            && 
+            this.x >= enemies.x - 100
+            &&
+            this.x <= enemies.x + 100
+        ) {
+            this.restart();
+        }
+    }
+      
     }
 
     handleInput(e) {
@@ -54,7 +76,7 @@ class Player {
                     }
                     break;
                 case 'up':
-                    if(this.y != 0){
+                    if(this.y != -100){
                     this.y -=100;
                     }
                     break;
@@ -77,19 +99,13 @@ class Player {
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
 
-const enemy1 = new Enemy();
-enemy1.speed = 3;
-enemy1.y = 140;
-const enemy2 = new Enemy();
-enemy2.speed = 4;
-enemy2.y = 220;
-const enemy3 = new Enemy();
-enemy3.speed = 5;
-enemy3.y = 60;
+const numEnemies = 4;
+const allEnemies = [];
 
-const allEnemies = [enemy1,enemy2, enemy3];
+for (let i = 0; i< numEnemies; i++)
+    allEnemies.push(new Enemy(-100, Math.floor(Math.random() * 230) + 20 , 3));
 
-const player = new Player();
+const player = new Player(200,400,1);
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
