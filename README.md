@@ -20,11 +20,11 @@ Allows to make more efficient the code and allows the other classes that inheret
 
 # Enemy
 
-The class that creates enemies randomly with different speed.
+Creates enemies randomly with different speed.
     - update allows to refresh the position of the enemy giving him different speed based in the var of the computer.
 
 # Player
 
-The player that we can control and checks if we arrives to the top of the map, if we are trying to go out of the board and to check if collides with the enemy for restarting the game.
+Control and check if the player arrives to the top of the map, if the player is trying to go out of the board or collides with the enemy, the game gets restarted.
     - allows to check if the player hits an enemy
     - checks if the player arrives to the top or if is trying to surpass the board.
