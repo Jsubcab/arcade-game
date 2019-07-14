@@ -6,12 +6,20 @@ Game created by the materials of Udacity with Javascript. The game itself is a f
 
 ## Process
 
-The file that has the engine (app.js), is structures by:
+The file that has the engine (app.js), is structured by:
 
 - Superclass: Creature
     - Enemy: array of enemies
     - Player: player
+    
+# Superclass
 
-## Contributing
+Allows to resume the code and to allow the other classes that inherets from it to share position and sprites
 
-This repository is the starter code for _all_ Udacity students. Therefore, we most likely will not accept pull requests.
+# Enemy
+
+The class that creates enemies randomly with different speed.
+
+# Player
+
+The player that we can control and checks if we arrives to the top of the map, if we are trying to go out of the board and to check if collides with the enemy for restarting the game.
