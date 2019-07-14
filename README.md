@@ -12,7 +12,7 @@ Game created by the materials of Udacity with Javascript. The game itself is a f
 3. Start index.html.
 4. Enjoy!
 
-- Instructions:
+- How to play:
     - Use the arrows to move your character.
     - Arrive to the other side of the map.
     - Avoid the enemies!
