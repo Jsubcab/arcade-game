@@ -9,7 +9,7 @@ Game created by the materials of Udacity with Javascript. The game itself is a f
 - Installation steps:
 1. Clone or download the repository.
 2. In case you download the repository, unzip it.
-3. Start index.html.
+3. Start index.html in the browser.
 4. Enjoy!
 
 - How to play:
