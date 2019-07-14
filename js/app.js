@@ -61,11 +61,8 @@ class Player extends Creature{
         this.x =200;
         this.y =400;
     }
-    //if arrives to the top, the position gets restarted
+    
     update() {
-        if (this.y === -100) {
-            this.restart();
-        }
         // for every enemy is checked his position and if it collides
         // with the player, restarts
     for (let enemies of allEnemies) {
@@ -86,6 +83,11 @@ class Player extends Creature{
     /* the function detects what is pressed and says if can move or not
     the player, checking the limits of the board */
     handleInput(e) {
+        //if arrives to the top, the position gets restarted
+        if (this.y === 0) {
+            this.restart();
+        }
+        //limits of the board
             switch (e) {
                 case 'left':
                     if(this.x != 0){
