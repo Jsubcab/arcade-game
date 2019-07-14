@@ -4,9 +4,18 @@
 
 Game created by the materials of Udacity with Javascript. The game itself is a frog-style, that you need to move your character to avoid the enemies and to reach the top of the screen. If you arrive to the top or if you are touched by an enemy, the game gets restarted.
 
-## How to play
+## How to install and play
 
-The player can use the arrows of the keyboard to move the character and try to reach the top. If gets touch by the enemy the game gets restarted.
+- Installation steps:
+1. Clone or download the repository.
+2. In case you download the repository, unzip it.
+3. Start index.html.
+4. Enjoy!
+
+- Instructions:
+    - Use the arrows to move your character.
+    - Arrive to the other side of the map.
+    - Avoid the enemies!
 
 ## The game
 
