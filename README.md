@@ -6,7 +6,7 @@ Game created by the materials of Udacity with Javascript. The game itself is a f
 
 ## Process
 
-The file that has the engine (app.js), is structured by:
+The engine file(app.js), is structured by:
 
 - Superclass: Creature
     - Enemy: array of enemies
@@ -14,7 +14,7 @@ The file that has the engine (app.js), is structured by:
     
 # Superclass
 
-Allows to resume the code and to allow the other classes that inherets from it to share position and sprites
+Allows to make more efficient the code and allows the other classes that inherets from it to share position and sprites
     - X, Y, Sprites variables. Give us the position and which char is draw it in the board.
     - render function that allows to print the image.
 
