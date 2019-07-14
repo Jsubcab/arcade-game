@@ -1,4 +1,4 @@
-# Project for Udacity 
+# Arcade Game: project for Udacity 
 
 ## Introduction
 
