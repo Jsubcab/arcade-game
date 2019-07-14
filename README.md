@@ -1,20 +1,25 @@
-# Classic Arcade Game Clone Project
+# Project for Udacity 
 
-## Table of Contents
+## Introduction
 
-- [Instructions](#instructions)
-- [Contributing](#contributing)
+Game created by the materials of Udacity with Javascript. The game itself is a frog-style, that you need to move your character to the top of the screen for restarting the game.
 
-## Instructions
+## Process
 
-Use this [rubric](https://review.udacity.com/#!/rubrics/15/view) for self-checking your submission.
+The file that has the engine (app.js), is structured by:
 
-Make sure the functions you write are **object-oriented** - either class functions (like `Player` and `Enemy`) or class prototype functions such as `Enemy.prototype.checkCollisions`. Also make sure that the keyword `this` is used appropriately within your class and class prototype functions to refer to the object the function is called upon.
+- Superclass: Creature
+    - Enemy: array of enemies
+    - Player: player
+    
+# Superclass
 
-Your **README.md** file should be updated with instructions on both how to 1. Run and 2. Play your arcade game.
+Allows to resume the code and to allow the other classes that inherets from it to share position and sprites
 
-For detailed instructions on how to get started, check out this [guide](https://docs.google.com/document/d/1v01aScPjSWCCWQLIpFqvg3-vXLH2e8_SZQKC8jNO0Dc/pub?embedded=true).
+# Enemy
 
-## Contributing
+The class that creates enemies randomly with different speed.
 
-This repository is the starter code for _all_ Udacity students. Therefore, we most likely will not accept pull requests.
+# Player
+
+The player that we can control and checks if we arrives to the top of the map, if we are trying to go out of the board and to check if collides with the enemy for restarting the game.
