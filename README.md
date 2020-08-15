@@ -1,4 +1,4 @@
-# Arcade Game: project for Udacity 
+# Arcade Game: Frog
 
 ## Introduction
 
